@@ -11,6 +11,7 @@ import {
   Image,
 } from "react-native";
 import axios from "axios";
+import Header from "./components/header/header";
 
 export default function App() {
   const [count, setCount] = useState(5);
@@ -51,16 +52,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Header />
       <Text>Hello world!</Text>
       <StatusBar style="auto" />
-      {imgData && <Image source={{ uri: imgData }} />}
+      {imgData !== null && <Image source={{ uri: imgData }} />}
       <View style={styles.buttonGroup}>
         <Button title="Load More!" onPress={handleLoadMore} />
         <Button title="Reset" onPress={() => setCount(5)} />
         <Button title="Load Image" onPress={() => handleImageLoad()} />
       </View>
 
-      {data && (
+      {data !== null && (
         <FlatList
           data={data}
           renderItem={({ item }) => (
@@ -84,7 +86,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 60,
   },
   buttonGroup: {
     display: "flex",
