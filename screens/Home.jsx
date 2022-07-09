@@ -53,7 +53,6 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <Header />
-      <Text>Hello world!</Text>
       <Button title="Review" onPress={() => navigation.navigate("Review")} />
       <StatusBar style="auto" />
       {imgData !== null && <Image source={{ uri: imgData }} />}
@@ -103,7 +102,5 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     width: "100%",
-    // display: "flex",
-    // flexDirection: "row",
   },
 });

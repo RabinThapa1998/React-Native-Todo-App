@@ -15,6 +15,7 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <Text>App</Text>
+      <Text>First Native App by RBT</Text>
     </View>
   );
 };
